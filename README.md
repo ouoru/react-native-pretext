@@ -2,6 +2,8 @@
 
 > Style your Text components using prefixes!
 
+Pretext handles your styles inside the string itself, by applying different styles based on the beginning character(s) of your string. 
+
 ## Description
 
 `react-native-pretext` allows you to personally style intricate `Text` Components.

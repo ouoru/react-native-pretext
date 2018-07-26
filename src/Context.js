@@ -30,7 +30,9 @@ class Context {
             charId = parts[i].charAt(0)
 
             if (this.context[charId]) {
-                parts[i] = <Text style={this.context[charId]} key={i}>{string.substr(1)}</Text>
+                parts[i] = <Text style={this.context[charId]} key={i}>
+                    {i !== 0 ? string.replace(charId, this.config.separator) : string.substr(1)}
+                </Text>
             }
         }
 

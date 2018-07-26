@@ -5,11 +5,11 @@
 ## Description
 
 `react-native-pretext` allows you to personally style intricate `Text` Components.
-This is *NOT* what you are looking for if:
+This is **NOT** what you are looking for if:
 - You want a StyleSheet
 
-This *may* be what you are looking for if:
-- You need to Style words differently in an individual string
+This **may** be what you are looking for if:
+- You need to style words differently in one string
 - You need to store and read styled Text components from a database
 
 ## Install

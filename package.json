@@ -1,0 +1,11 @@
+{
+  "name": "react-native-pretext",
+  "version": "1.0.0",
+  "description": "Style text components using String-prefixes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Ru <mike5_17@hotmail.com>",
+  "license": "ISC"
+}

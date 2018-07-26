@@ -6,11 +6,12 @@
 
 `react-native-pretext` allows you to personally style intricate `Text` Components.
 This is *NOT* what you are looking for if:
-- You want a StyleSheet
+- You want to manage a StyleSheet for your whole app
 
 This *may* be what you are looking for if:
-- You need to Style words differently in an individual string
 - You need to store and read styled Text components from a database
+- You need different text styles in an individual string
+- You use complex strings with variable text positions
 
 ## Install
 
@@ -52,9 +53,13 @@ Context.give(defaultStyle, context, config)
 ```jsx
 import { Pretext } from 'react-native-pretext'
 
-_renderTitle = () => {
-    return <Pretext>$Hello World!</Pretext>
-}
+<Pretext>$Hello World!</Pretext>
+```
+
+- `Pretext` will style your text according to the context you initialized!
+
+```jsx
+<Text style={context['$']}>Hello World!</Text>
 ```
 
 ## API
@@ -71,5 +76,5 @@ _renderTitle = () => {
 
 | Name  | Type     | default | Description |
 | :---- | :------: | :------: | :--- |
-| separator | `string`   | ` ` | separator used to determine where to check for prefixes |
+| separator | `string`   | `' '` | separator used to determine where to check for prefixes |
 | stackPrefixes | `bool`   | `false` | allow multiple prefixes, and combine the styles from each |

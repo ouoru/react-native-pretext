@@ -1,6 +1,6 @@
 {
   "name": "react-native-pretext",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Style text components using String-prefixes",
   "main": "index.js",
   "scripts": {

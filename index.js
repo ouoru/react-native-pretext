@@ -3,19 +3,18 @@ import { Text } from 'react-native'
 
 class Stylist {
     constructor() {
+        //This style is applied to the parent Text component
         this.defaultStyle = {}
+
+        //
         this.context = {}
+
         this.config = {
-            //Whether or not to remove separators from the given string,
-            //Set to true if you are separating using Symbols.
-            removeSeparators: false,
+            //Indicates the start of the prefix string
+            styleStart: '[',
 
-            //Character(s) used to split up the string
-            //Can be used with Regex, for example, /[\s,]+/ will split on spaces and commas.
-            separator: ' ',
-
-            //Checks for multiple prefixes
-            stackPrefixes: false,
+            //Indicates the end of the prefix string
+            styleEnd: ']',
         }
     }
 
@@ -26,7 +25,7 @@ class Stylist {
     }
 
     format (string) {
-        let parts = string.split(this.config.separator)
+        let parts = string.split(this.config.styleStart)
 
         for (var i=0; i<parts.length; i++) {
             parts[i] = this._styledPart(parts[i], {}, i)
@@ -36,19 +35,20 @@ class Stylist {
     }
 
     _styledPart (string, styles, i) {
-        let charId = string.charAt(0)
-        if (this.context[charId]) {
-            return this._styledPart(string.substr(1), Object.assign(styles, this.context[charId]), i)
+        let char = string.charAt(0)
+        //maybe mutate string with slice here so I don't have to do .substr(1)?
+        //does slice return the char sliced? i forgots
+
+        if (char !== this.config.styleEnd) {
+            return this._styledPart(string.substr(1), Object.assign(styles, this.context[char]), i)
         }
 
-        if (!this.config.removeSeparators && i !== 0) {
-            string = this.config.separator + string
-        }
+        if (styles === {}) return string.substr(1)
 
-        return <Text style={styles} key={i}>{string}</Text>
+        return <Text style={styles} key={i}>{string.substr(1)}</Text>
     }
 }
 
 export const Context = new Stylist()
 
-export const Pretext = (props) => Context.format(props.children)
+export const Pretext = props => Context.format(props.children)

@@ -28,7 +28,7 @@ class Stylist {
         let parts = string.split(this.config.styleStart)
 
         for (var i=0; i<parts.length; i++) {
-            parts[i] = this._styledPart(parts[i], {}, i)
+            if (parts[i]) parts[i] = this._styledPart(parts[i], {}, i)
         }
 
         return <Text style={this.defaultStyle}>{parts}</Text>

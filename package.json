@@ -1,5 +1,12 @@
 {
   "name": "react-native-pretext",
+  "keywords": [
+    "react-native",
+    "styled-components",
+    "text",
+    "stylesheet",
+    "styles"
+  ],
   "version": "1.0.4",
   "description": "Style text components using String-prefixes",
   "main": "index.js",

@@ -4,6 +4,8 @@
 
 Pretext handles your styles inside the string itself, by adding styles based on a given string of 'prefixes'.
 
+Checkout [this link](https://ouoru.github.io/react-pretext/) for a Live Demo.
+
 ## Description
 
 `react-native-pretext` allows you to intricately style `Text` Components.
@@ -63,6 +65,17 @@ import { Pretext } from 'react-native-pretext'
 
 ```jsx
 <Text style={{ fontFamily: 'MyFont', fontSize: 12, color: 'purple' }}>Hello World!</Text>
+```
+
+##Advanced Usage
+
+- You can pass context props to a Pretext component to override your default settings.
+
+```jsx
+<Pretext
+    style={extraStyle}
+    config={extraConfig}
+>[p]Hello World!</Pretext>
 ```
 
 ## API

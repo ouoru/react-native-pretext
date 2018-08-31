@@ -7,7 +7,7 @@
     "stylesheet",
     "styles"
   ],
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Style text components using String-prefixes",
   "main": "index.js",
   "scripts": {

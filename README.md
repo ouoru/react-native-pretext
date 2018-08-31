@@ -6,6 +6,11 @@ Pretext handles your styles inside the string itself, by adding styles based on 
 
 Checkout [this link](https://ouoru.github.io/react-pretext/) for a Live Demo.
 
+Clone [my test repo](https://github.com/ouoru/react-native-pretext-tests.git) if you are having trouble using.
+```sh
+$ git clone https://github.com/ouoru/react-native-pretext-tests.git
+```
+
 ## Description
 
 `react-native-pretext` allows you to intricately style `Text` Components.
